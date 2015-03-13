@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Remover Lembrete{% endblock %}
+{% block corpo %}
+
+    <div class="row">
+          <table class="table">
+            <thead>
+              <tr>
+                <th colspan="2">{{ lembrete.titulo }}</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Disciplina</td>
+                </td><td>{{ lembrete.disciplina }}</td>
+            </tr>            
+            <tr>
+                <td>Assunto</td>
+                </td><td>{{ lembrete.assunto }}</td>
+            </tr>
+            <tr>
+                <td>Data</td>
+                <td>{{ lembrete.data }}</td>
+            </tbody>
+          </table>
+      </div>
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button type="submit" class="btn btn-danger">Remover</button> ou <a href="/" class="btn">Cancelar</a></form>
+</form>
+{% endblock %}
